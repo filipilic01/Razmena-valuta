@@ -1,0 +1,112 @@
+KREDENCIJALI ZA LOGOVANJE:
+OWNER - owner@uns.ac.rs, password 
+ADMIN - admin@uns.ac.rs, password
+USER - user@uns.ac.rs, password
+
+                                                            USERS SERVICE mikroservis
+
+GET - http://localhost:8765/users
+POST user - http://localhost:8765/users/newUser{
+ {
+    "email": "pd5D@uns.ac.rs",
+    "password": "password",
+    "role": "USER"
+ }
+}
+PUT user - http://localhost:8765/users/editUser{
+  {
+    "email": "pd5D@uns.ac.rs",
+    "password": "password1f23",
+    "role": "USER"
+}
+}
+POST admin - http://localhost:8765/users/newAdmin{
+  {
+    "email": "p5D@uns.ac.rs",
+    "password": "password1f23",
+    "role": "ADMIN"
+}
+}
+PUT admin - http://localhost:8765/users/editAdmin{
+  {
+    "email": "p5D@uns.ac.rs",
+    "password": "passwdord1f23",
+    "role": "ADMIN"
+}
+}
+
+DELETE - http://localhost:8765/users/4
+
+                                                      CURRENCY EXCHANGE mikroservis
+
+GET - http://localhost:8765/currency-exchange?from=USD&to=GBP
+
+                                                      CURRENCY CONVERSION mikroservis
+
+GET - http://localhost:8765/currency-conversion?from=USD&to=RSD&quantity=1
+
+                                                      BANK ACCOUNT mikroservis
+
+GET - http://localhost:8765/bank-account
+GET - http://localhost:8765/bank-account/1
+POST - http://localhost:8765/bank-account {
+  {
+        "rsd": 0.0,
+        "gbp": 0.0,
+        "eur": 0.0,
+        "usd": 0.0,
+        "chf": 0.0,
+        "email": "pd5D@uns.ac.rs"
+    }
+}
+PUT - http://localhost:8765/bank-account {
+  {
+        "rsd": 100.0,
+        "gbp": 400000.0,
+        "eur": 5000.0,
+        "usd": 80000,
+        "chf": 132.0,
+        "email": "user@uns.ac.rs"
+    }
+}
+DELETE - http://localhost:8765/bank-account/3
+
+                                                        CRYPTO EXCHANGE mikroservis
+
+GET - http://localhost:8765/crypto-exchange?from=BNB&to=ETH
+
+                                                        CRYPTO CONVERSION mikroservis
+
+GET - http://localhost:8765/crypto-conversion?from=ETH&to=BNB&quantity=2
+
+                                                        CRYPTO WALLET mikroservis
+
+GET - http://localhost:8765/crypto-wallet
+GET - http://localhost:8765/crypto-wallet/1
+POST - http://localhost:8765/crypto-wallet{
+  {
+    "eth": 10.0,
+    "bnb": 10.0,
+    "btc": 10.0,
+    "email": "pd5D@uns.ac.rs"
+}
+}
+PUT - http://localhost:8765/crypto-wallet{
+  {
+    "eth": 10.0,
+    "bnb": 20.0,
+    "btc": 20.0,
+    "email": "user@uns.ac.rs"
+}
+}
+DELETE - http://localhost:8765/crypto-wallet/3
+
+                                                      TRADE SERVICE - mikroservis
+
+GET (get-trade-cryptoToOtherFiat(GBP)) - http://localhost:8765/trade-service?from=BNB&to=GBP&quantity=2
+GET (get-trade-otherFiat(GBP)ToCrypto) - http://localhost:8765/trade-service?from=GBP&to=BTC&quantity=20000
+GET (get-trade-cryptoToFiat) - http://localhost:8765/trade-service?from=ETH&to=USD&quantity=2
+GET (get-trade-fiatToCrypto) - http://localhost:8765/trade-service?from=EUR&to=BNB&quantity=2000
+
+
+

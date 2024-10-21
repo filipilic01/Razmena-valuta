@@ -1,0 +1,1 @@
+INSERT INTO crypto_wallet(eth, bnb, btc, email) VALUES (0.0, 0.0, 0.0, 'user@uns.ac.rs');
